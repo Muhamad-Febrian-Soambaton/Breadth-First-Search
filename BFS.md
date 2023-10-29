@@ -160,7 +160,7 @@ Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 9.
 6. Ubahlah kode program di atas sehingga bentuk tree seperti Gambar 4.7 dapat dibentuk. Kemudian
 tentukan bagaimana algoritma BFS dapat menemukan node C.
 
-![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003937.png)
+![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20004003.png)
 
 
 ## Jawaban
@@ -277,4 +277,148 @@ dari output di atas didapatkan node 5 dengan depth 2 adalah dengan pertama node 
 
    node 9 didapatkan dengan depth 3 adalah dengan di mulai pada depth 0 dengan node 1 diamsukkan ke dalam queue dan setelah di lewati akan di pindah ke dalam array visited dan berlanjut pada depth selanjutnya dengan queue 2, 3, dan 4 seletal di lewati akan masuk ke dalam array visited dan terus berlanjut hingga depth ke 3 di mana 9 berada dan diteruskan sampai semua node di lewati.
 
-3. 
+3. Code di ubah menjadi.
+                    
+            /*
+             * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+             * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+             */
+            
+            
+            package JavaApplication1;
+            import java.util.ArrayDeque;
+            import java.util.ArrayList;
+            import java.util.HashMap;
+            import java.util.List;
+            import java.util.Map;
+            import java.util.Queue;
+            import java.util.Set;
+            
+            public class AdjacencyList {
+                public enum NodeColour {
+                    WHITE, GRAY, BLACK
+            }
+            
+            public static class Node {
+                char data;
+                int distance;
+                Node predecessor;
+                NodeColour colour;
+            
+            public Node(int data)
+            
+            {
+                  this.data = data;
+            }
+            
+                public String toString() {
+                    return "(" + data + ",d=" + distance + ")";
+                }
+            }
+            
+            Map<Node, List<Node>> nodes;
+            
+            public AdjacencyList()
+            {
+            nodes = new HashMap<Node, List<Node>>();
+            }
+            
+            public void addEdge(Node n1, Node n2) {
+                if (nodes.containsKey(n1)) {
+                    nodes.get(n1).add(n2);
+                } else {
+                    ArrayList<Node> list = new ArrayList<Node>();
+                    list.add(n2);
+                    nodes.put(n1, list);
+                }
+            }
+            
+            public void bfs(Node s) {
+                Set<Node> keys = nodes.keySet();
+                for (Node u : keys) {
+                    if (u != s) {
+                        u.colour = NodeColour.WHITE;
+                        u.distance = Integer.MAX_VALUE;
+                        u.predecessor = null;
+                    }
+                }
+                s.colour = NodeColour.GRAY;
+                s.distance = 0;
+                s.predecessor = null;
+                Queue<Node> q = new ArrayDeque<Node>();
+                q.add(s);
+                while (!q.isEmpty()) {
+                    Node u = q.remove();
+                    List<Node> adj_u = nodes.get(u);
+                    if (adj_u != null) {
+                        for (Node v : adj_u) {
+                            if (v.colour == NodeColour.WHITE) {
+                                v.colour = NodeColour.GRAY;
+                                v.distance = u.distance + 1;
+                                v.predecessor = u;
+                                q.add(v);
+                            }
+                        }
+                    }
+                    u.colour = NodeColour.BLACK;
+                    System.out.print(u + " ");
+                }
+            }
+            
+            public static void main(String[] args)
+            
+            {
+                AdjacencyList graph = new AdjacencyList();
+                Node n1 = new Node('A');
+                Node n2 = new Node('B');
+                Node n3 = new Node('C');
+                Node n4 = new Node('D');
+                Node n5 = new Node('E');
+                Node n6 = new Node('F');
+                Node n7 = new Node('G');
+                Node n8 = new Node('H');
+                Node n9 = new Node('I');
+                
+                graph.addEdge(n1, n2);
+                graph.addEdge(n1, n4);
+            
+                graph.addEdge(n2, n6);
+                graph.addEdge(n2, n1);
+                graph.addEdge(n2, n4);
+                
+                graph.addEdge(n3, n4);
+                graph.addEdge(n3, n5);
+                
+                graph.addEdge(n4, n2);
+                graph.addEdge(n4, n3);
+                graph.addEdge(n4, n5);
+                
+                
+                graph.addEdge(n5, n4);
+                graph.addEdge(n5, n3);
+                
+                
+                graph.addEdge(n6, n2);
+                graph.addEdge(n6, n7);
+               
+                
+                
+                graph.addEdge(n7, n6);
+                graph.addEdge(n7, n9);
+                
+                graph.addEdge(n8, n9);
+                
+                graph.addEdge(n9, n8);
+                
+                graph.bfs(n6);
+            }}
+
+Output dari code adalah.    
+
+(F,d=0) (B,d=1) (G,d=1) (A,d=2) (D,d=2) (I,d=2) (C,d=3) (E,d=3) (H,d=3) 
+
+sama dengan algoritma yang sebelumnya BFS di gunakan dari inisial condition pada node F seperti gambar. proses pertama menaruh node 1 pada queue setealh di lewati akan masuk kedalam visited array dan berlanjutke depth selanjutnya. pada proses selanjutnya juga di lakukan pngantrian dan penyimpanan sampai di dapatkan node C.
+
+## Kesimpulan
+
+Dengan BFS dapat di lakukan algoritma pencarian yang pasti terdapat jawabnaya namun harus memiliki sumberdaya yang banyak karena besarnya memori yang di gunakan oleh algoritma BFS 
