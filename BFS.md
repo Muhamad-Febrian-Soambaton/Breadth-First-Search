@@ -165,7 +165,8 @@ tentukan bagaimana algoritma BFS dapat menemukan node C.
    Hasil di atas di dapatkan di karenakan code "graph.bfs(n3);" yang berarti mulai melakukan algoritma BFS dari node 3 sehingga node 3 merupakan tingkat atau di kedalaman palinga atas maka node 3 depth 0. node ke 8, 6, dan 7 ditentukan mempunyai depth (6,d=2), (7,d=3), (8,d=3) dengan menggunakan array queue dan visited. Pertama dimulai dari node 3 disimpan dalam queue setelah sudah di datangi makan di simpan kedalam array visited lalu akan pindah ke depth ke-1 dari depth ke-0 karena tetangga 3 adalah 4 dan 2 maka node 4 dan 2 masuk ke queue ketika node 4 sudah di datangi maka node 4 di simpan dalam array visited dengan depth ke-1 setelah node 4 queue selanjutnya adalah 2 ketika dua sudah di datangi maka node 2 akan dimasukkan ke dalam array visited dengan depth 1. Dari node 2 pencarian berlanjut ke depth 2 dimulai dari tetangga 4 yaitu 3, 5, dan 6 karena 3 sudah pernah di datangi maka queue akan berisi 5 dan 6 di tambah dengan tetangga dari 2 yaitu 1 dan 3 karena 3 sudah di datangi maka queue dari tetangga 2 hanya node 1. Queue dari depth 2 adalah 5, 6, dan 1 setelah semua di datangi maka node 5, 6, dan 1 akan di masukkan kedalam array visited. Selanjutnya pencarian dilakukan di depth ke 3 dengan tetangga dari node 5 adalah 4, 6, dan 7. Tetangga dari node 6 adalah 4, 5, 7, 8. Tengga dari node 1 adalah 2 maka queue pada depth 3 adalah 7 dan 8 saja karena node lain sudah pernh di datangi ketika 7 dan 8 sudah di datangi maka node 7 dan 8 akan di masukkan kedalam array visited dengan depth 3.
 
 2. Code di ubah menjadi
-               public static void main(String[] args)
+
+           public static void main(String[] args)
             
             {
                 AdjacencyList graph = new AdjacencyList();
@@ -206,4 +207,68 @@ tentukan bagaimana algoritma BFS dapat menemukan node C.
 dari output di atas didapatkan node 5 dengan depth 2 adalah dengan pertama node 0 masuk kedalam queue dan dimaukkan kedalam visited array. lalu lanjut ke depth 1 terdapat node 1 dan node 2 masuk kedalam queue dan setelah di lewati akan di masukkan ke visited array sete;ah di depth 1 makan akan lanjut ke depth 2 dengan tetangga 3, 4, 5, dan 6 masuk kedalam queue ketika sudah di lewati di dapatkan node 3, 4, 5, dan 6 masuk ke depth 2.
 
 2. Code diubah menjadi.
-   
+
+            public static void main(String[] args)
+            
+            {
+                AdjacencyList graph = new AdjacencyList();
+                Node n1 = new Node(1);
+                Node n2 = new Node(2);
+                Node n3 = new Node(3);
+                Node n4 = new Node(4);
+                Node n5 = new Node(5);
+                Node n6 = new Node(6);
+                Node n7 = new Node(7);
+                Node n8 = new Node(8);
+                Node n9 = new Node(9);
+                Node n10 = new Node(10);
+                Node n11 = new Node(11);
+                Node n12 = new Node(12);
+            
+            
+            
+                
+                graph.addEdge(n2, n5);
+                graph.addEdge(n2, n6);
+                graph.addEdge(n2, n1);
+            
+                graph.addEdge(n1, n2);
+                graph.addEdge(n1, n3);
+                graph.addEdge(n1, n4);
+            
+                graph.addEdge(n3, n1);
+            
+                graph.addEdge(n4, n1);
+                graph.addEdge(n4, n7);
+                graph.addEdge(n4, n8);
+            
+                graph.addEdge(n5, n2);
+                graph.addEdge(n5, n9);
+                graph.addEdge(n5, n10);
+            
+                graph.addEdge(n6, n2);
+            
+                graph.addEdge(n7, n4);
+                graph.addEdge(n7, n11);
+                graph.addEdge(n7, n12);
+            
+                graph.addEdge(n8, n4);
+            
+                graph.addEdge(n9, n5);
+            
+                graph.addEdge(n10, n5);
+            
+                graph.addEdge(n11, n7);
+                
+                graph.addEdge(n12, n7);
+            
+                graph.bfs(n1);
+              }
+            }
+   Code di atas mempunyai hasil
+
+   (1,d=0) (2,d=1) (3,d=1) (4,d=1) (5,d=2) (6,d=2) (7,d=2) (8,d=2) (9,d=3) (10,d=3) (11,d=3) (12,d=3)
+
+   node 9 didapatkan dengan depth 3 adalah dengan di mulai pada depth 0 dengan node 1 diamsukkan ke dalam queue dan setelah di lewati akan di pindah ke dalam array visited dan berlanjut pada depth selanjutnya dengan queue 2, 3, dan 4 seletal di lewati akan masuk ke dalam array visited dan terus berlanjut hingga depth ke 3 di mana 9 berada dan diteruskan sampai semua node di lewati.
+
+3. 
