@@ -155,10 +155,13 @@ Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 5.
 4. Ubahlah method static void main sehingga bentuk tree seperti Gambar 4.6 dapat dibentuk.
 Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 9.
 
-![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003834.png)
+![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003937.png)
 
 6. Ubahlah kode program di atas sehingga bentuk tree seperti Gambar 4.7 dapat dibentuk. Kemudian
 tentukan bagaimana algoritma BFS dapat menemukan node C.
+
+![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003937.png)
+
 
 ## Jawaban
 1. Pada code yang diberikan di hasilkan output
