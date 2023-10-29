@@ -149,10 +149,13 @@ code di atas adalah main file pada code java. Untuk code algoritma BFS ditunjukk
 1. Tentukan bagaimana algoritma BFS di atas dapat menentukan node ke 8, 6, dan 7.
 2. Ubahlah method static void main sehingga bentuk tree seperti Gambar 4.5 dapat dibentuk.
 Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 5.
-https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003834.png
+
+![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003834.png)
 
 4. Ubahlah method static void main sehingga bentuk tree seperti Gambar 4.6 dapat dibentuk.
 Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 9.
+
+![image](https://github.com/Muhamad-Febrian-Soambaton/Breadth-First-Search/blob/main/Screenshot%202023-10-30%20003834.png)
 
 6. Ubahlah kode program di atas sehingga bentuk tree seperti Gambar 4.7 dapat dibentuk. Kemudian
 tentukan bagaimana algoritma BFS dapat menemukan node C.
