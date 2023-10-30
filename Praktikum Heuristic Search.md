@@ -433,6 +433,27 @@ puzzlenya mencapai goal state.
    
 Langkah-langkah ini berulang hingga solusi ditemukan atau semua kemungkinan solusi dieksplorasi. Hasil akhir akan mencetak langkah-langkah solusi pada output.
 3. Pada initial satate dan goal state seperti gambar 5.9 di hasilkan output
-[Screenshot 2023-10-30 231056](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/00f1952e-8291-4de8-a70c-792455773dfc)
+![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/0862b61f-5db3-4d4e-ad07-d567c3d5a990)
+Didapatkan output tersebut dengan 
+
+      1. Inisialisasi: Algoritma dimulai dengan menginisialisasi keadaan awal permainan (initial_state) dan keadaan tujuan (goal_state). Ini adalah konfigurasi awal dan konfigurasi yang ingin Anda capai.
+      
+      2. Heuristik (Manhattan Distance): Heuristik yang digunakan dalam contoh ini adalah jarak Manhattan. Heuristik ini mengukur seberapa jauh setiap angka pada papan permainan berada dari posisinya yang benar di keadaan tujuan. Semakin kecil heuristik, semakin mendekati solusi.
+      
+      3. A Search*: Algoritma A* adalah algoritma pencarian yang menggabungkan biaya aktual yang diperlukan untuk mencapai suatu keadaan dengan heuristik. Algoritma ini mempertimbangkan dua faktor: biaya sejauh ini (g) dan estimasi biaya yang tersisa (h) ke tujuan.
+      
+      4. Open List dan Closed Set: Algoritma A* menggunakan dua struktur data: open list (daftar terbuka) dan closed set (daftar tertutup). Open list berisi keadaan yang masih harus dieksplorasi, sementara closed set berisi keadaan yang sudah dieksplorasi.
+      
+      5. Ekspansi Node: Algoritma A* mengambil keadaan yang memiliki nilai terkecil (g + h) dari open list. Ini adalah keadaan yang paling berjanji untuk mencapai solusi. Kemudian, ini dikeluarkan dari open list dan dimasukkan ke dalam closed set.
+      
+      6. Generate Penerus: Untuk keadaan saat ini, algoritma menghasilkan semua kemungkinan penerus dengan melakukan semua gerakan yang valid. Ini adalah semua keadaan yang mungkin dihasilkan dengan memindahkan kotak kosong satu langkah ke atas, bawah, kanan, atau kiri.
+      
+      7. Evaluasi Heuristik: Algoritma mengevaluasi heuristik untuk setiap keadaan penerus. Ini melibatkan perhitungan jarak Manhattan antara setiap angka dalam keadaan saat ini dan keadaan tujuan. Jumlah jarak Manhattan ini adalah estimasi biaya tersisa (h) untuk mencapai solusi.
+      
+      8. Penyortiran dan Penyimpanan: Keadaan penerus disortir berdasarkan biaya sejauh ini (g) dan heuristik biaya tersisa (h + g). Mereka kemudian dimasukkan ke dalam open list untuk dieksplorasi lebih lanjut.
+      
+      9. Iterasi: Algoritma berlanjut dengan mengulangi proses ini hingga menemukan solusi. Setiap iterasi, ia memilih keadaan berikutnya dari open list, mengevaluasi penerusnya, dan memutuskan langkah mana yang harus diambil untuk mencapai tujuan.
+      
+      10. Rekonstruksi Solusi: Setelah menemukan keadaan tujuan, algoritma A* dapat merekonstruksi solusi dengan melacak keadaan-keadaan yang telah dilewati dari tujuan ke awal menggunakan informasi parent.
 
 
