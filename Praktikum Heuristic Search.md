@@ -456,7 +456,8 @@ Didapatkan output tersebut dengan
       
       10. Rekonstruksi Solusi: Setelah menemukan keadaan tujuan, algoritma A* dapat merekonstruksi solusi dengan melacak keadaan-keadaan yang telah dilewati dari tujuan ke awal menggunakan informasi parent.
 
-4. Pada soal imi dengan initial state dan goal state 5.10 di dapatkan outuput
+4. Pada soal ini dengan initial state dan goal state 5.10 di dapatkan outuput
+
    ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/28b94d95-cc45-4279-8fb6-e3682fe37259)
 
 Sama seperti metode sebumnya didapatkan solusi dengan cara.
@@ -481,7 +482,10 @@ Sama seperti metode sebumnya didapatkan solusi dengan cara.
             
             8. Rekonstruksi Solusi: Setelah menemukan keadaan tujuan, algoritma A* dapat merekonstruksi solusi dengan melacak semua keadaan yang telah dilewati dari tujuan kembali ke keadaan awal menggunakan informasi parent.
 
-5. 
+5. Pada soal 5 didapatkan output
+   ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/e9d31783-5d2b-45cd-8b22-d209b5d8e604)
+   Dapat dilihat bahwa tidak ada hasil yang ditemukan pada initial dan goal yang diberikan. Hal ini dapat terjadi karena.
+   beberapa kondisi seperti initial state yang infeasible sehingga tidak ada pola yang cocok serta dapat juga di karenakan fungs            heuristic yang di gunakan tidak mirip dengan fungsi aslinya. langkah-langkah untuk mencapai goal state dari initial state ditemukan      di dalam class EightPuzzleSearch
 
 
 
