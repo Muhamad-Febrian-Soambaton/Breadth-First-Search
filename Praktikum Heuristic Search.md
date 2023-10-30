@@ -418,4 +418,17 @@ puzzlenya mencapai goal state.
 ## Jawaban
 
 1. EightPuzzleSearch adalah untuk menjalankan algoritma heuristic search, EightPuzzleSpace adalah tempat untuk membuat ruang puzzle, node digunakan untuk membuat node dalam puzzle.
-2. 
+2. Dalam kode Eight Puzzle 5.8 tidak ada solusi yang di temukan hal ini dapat di karenakan beberapa kondisi seperti initial state yang infeasible sehingga tidak ada pola yang cocok serta dapat juga di karenakan fungsi heuristic yang di gunakan tidak mirip dengan fungsi aslinya. langkah-langkah untuk mencapai goal state dari initial state ditemukan di dalam class EightPuzzleSearch. Class EightPuzzleSearch mencari solusi menggunakan algoritma pencarian A* dengan pilihan penggunaan heuristic h1 atau h2. Berikut adalah langkah-langkah untuk mencapai goal state:
+
+1. Inisialisasi initial state dan goal state.
+2. Membuat node awal (root) dengan initial state.
+3. Memasukkan node awal ke dalam daftar open.
+4. Selama daftar open tidak kosong, lakukan langkah-langkah berikut:
+   a. Pilih node dengan biaya terkecil (biaya yang dihitung berdasarkan heuristic dan panjang path).
+   b. Tambahkan node terpilih ke dalam daftar closed untuk menghindari pengulangan.
+   c. Jika node terpilih sama dengan goal state, maka solusi ditemukan, dan proses berakhir.
+   d. Dapatkan semua node penerus dari node terpilih.
+   e. Untuk setiap node penerus, hitung biaya baru berdasarkan heuristic, path length, dan biaya sebelumnya.
+   f. Jika node penerus belum pernah ada di daftar open atau biayanya lebih rendah, tambahkan node penerus ke daftar open dengan biaya yang diupdate.
+   
+Langkah-langkah ini berulang hingga solusi ditemukan atau semua kemungkinan solusi dieksplorasi. Hasil akhir akan mencetak langkah-langkah solusi pada output.
