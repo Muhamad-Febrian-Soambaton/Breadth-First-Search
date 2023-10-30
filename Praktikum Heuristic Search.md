@@ -432,3 +432,7 @@ puzzlenya mencapai goal state.
                      f. Jika node penerus belum pernah ada di daftar open atau biayanya lebih rendah, tambahkan node penerus ke daftar open dengan biaya yang diupdate.
    
 Langkah-langkah ini berulang hingga solusi ditemukan atau semua kemungkinan solusi dieksplorasi. Hasil akhir akan mencetak langkah-langkah solusi pada output.
+3. Pada initial satate dan goal state seperti gambar 5.9 di hasilkan output
+[Screenshot 2023-10-30 231056](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/00f1952e-8291-4de8-a70c-792455773dfc)
+
+
