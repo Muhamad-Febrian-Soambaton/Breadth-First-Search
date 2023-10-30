@@ -1,4 +1,5 @@
 # Breadth-First-Search Algorithm
+Muhamad Febrian Soambaton 5311421050
 ## Tujuan
 1. Mahasiswa mampu memahami konsep blind search dan dapat mengimplementasikan program
 salah satu algoritma blind search pada kasus tree.
