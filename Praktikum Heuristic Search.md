@@ -417,4 +417,5 @@ puzzlenya mencapai goal state.
 
 ## Jawaban
 
-1. EightPuzzleSearch adalah untuk menjalankan algoritma heuristic search, EightPuzzleSpace adalah tempat untuk membuat ruang puzzle, node digunakan untuk membuat node dalam puzzle
+1. EightPuzzleSearch adalah untuk menjalankan algoritma heuristic search, EightPuzzleSpace adalah tempat untuk membuat ruang puzzle, node digunakan untuk membuat node dalam puzzle.
+2. 
