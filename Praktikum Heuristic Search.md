@@ -456,4 +456,32 @@ Didapatkan output tersebut dengan
       
       10. Rekonstruksi Solusi: Setelah menemukan keadaan tujuan, algoritma A* dapat merekonstruksi solusi dengan melacak keadaan-keadaan yang telah dilewati dari tujuan ke awal menggunakan informasi parent.
 
+4. Pada soal imi dengan initial state dan goal state 5.10 di dapatkan outuput
+   ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/28b94d95-cc45-4279-8fb6-e3682fe37259)
+
+Sama seperti metode sebumnya didapatkan solusi dengan cara.
+
+            Inisialisasi: Pada awalnya, algoritma dimulai dengan mengatur keadaan awal permainan dan keadaan tujuan. Inisialisasi ini menentukan konfigurasi permulaan dan tujuan yang ingin dicapai.
+            
+            Heuristik (Jarak Manhattan): Algoritma ini menggunakan heuristik jarak Manhattan. Heuristik ini menghitung seberapa jauh setiap angka dalam permainan berada dari posisinya yang benar dalam keadaan tujuan. Semakin kecil nilai heuristiknya, semakin mendekati solusi.
+            
+            A Search*: A* adalah sebuah algoritma pencarian yang menggabungkan biaya aktual yang telah dikeluarkan sejauh ini dengan estimasi biaya tersisa menuju tujuan. Algoritma ini mempertimbangkan dua faktor: biaya aktual (g) dan estimasi biaya tersisa (h) ke tujuan.
+            
+            Open List dan Closed Set: A* menggunakan dua struktur data, yaitu daftar terbuka (open list) dan daftar tertutup (closed set). Daftar terbuka berisi keadaan yang masih harus dieksplorasi, sedangkan daftar tertutup berisi keadaan yang sudah diperiksa.
+            
+            Ekspansi Node: A* memilih keadaan dengan nilai terkecil (g + h) dari daftar terbuka. Keadaan ini adalah yang paling menjanjikan untuk mencapai solusi. Kemudian, keadaan ini dipindahkan dari daftar terbuka ke dalam daftar tertutup.
+            
+            Generate Penerus: Algoritma menghasilkan semua kemungkinan penerus dari keadaan saat ini dengan melakukan gerakan yang valid. Ini mencakup semua keadaan yang dapat diperoleh dengan memindahkan kotak kosong satu langkah ke atas, bawah, kanan, atau kiri.
+            
+            Evaluasi Heuristik: A* mengevaluasi heuristik untuk setiap keadaan penerus. Ini melibatkan perhitungan jarak Manhattan antara setiap angka dalam keadaan saat ini dan keadaan tujuan. Hasil jarak Manhattan ini adalah estimasi biaya tersisa (h) untuk mencapai solusi.
+            
+            Penyortiran dan Penyimpanan: Keadaan penerus disortir berdasarkan biaya aktual (g) dan estimasi biaya tersisa (h + g), kemudian dimasukkan ke dalam daftar terbuka untuk dieksplorasi lebih lanjut.
+            
+            Iterasi: Algoritma A* mengulangi proses ini sampai menemukan solusi. Setiap iterasi, algoritma memilih keadaan berikutnya dari daftar terbuka, mengevaluasi penerusnya, dan menentukan langkah mana yang harus diambil untuk mencapai tujuan.
+            
+            Rekonstruksi Solusi: Setelah menemukan keadaan tujuan, algoritma A* dapat merekonstruksi solusi dengan melacak semua keadaan yang telah dilewati dari tujuan kembali ke keadaan awal menggunakan informasi parent.
+
+5. 
+
+
 
