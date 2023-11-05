@@ -6,16 +6,16 @@ Muhamad Febrian Soambaton 5311421050
 2. Membuat file gui dan file utama seperti gambar dibawah.
    ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/d97e88f9-af84-4f38-9a22-e0905c374f23)
 3. Memasukkan code di bawah kedalam file TicTacToe.java.
-             public class TicTacToe {
-          public static void main(String[] args) {
-          TicTacToeGUI game = new TicTacToeGUI();
-          game.startGame();
-          }
-          }
+            public class TicTacToe {
+            public static void main(String[] args) {
+            TicTacToeGUI game = new TicTacToeGUI();
+            game.startGame();
+            }
+            }
 4. Memasukkan code di bawah ini kedalam file TicTacToeGUI.java.
          import java.awt.*;
-      import java.awt.event.*;
-      import javax.swing.*;
+         import java.awt.event.*;
+         import javax.swing.*;
       
        public class TicTacToeGUI {
        private JFrame frame;
@@ -135,7 +135,7 @@ Muhamad Febrian Soambaton 5311421050
        buttons[row2][col2].setBackground(Color.GREEN);
        }
        }
-5. Run code dan uji coba hasil.
-6. Hasil dan penjelasan code.
+6. Run code dan uji coba hasil.
+7. Hasil dan penjelasan code.
 
 ## Hasil
