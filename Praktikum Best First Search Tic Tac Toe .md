@@ -7,12 +7,13 @@ Muhamad Febrian Soambaton 5311421050
    ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/d97e88f9-af84-4f38-9a22-e0905c374f23)
 3. Memasukkan code di bawah kedalam file TicTacToe.java.
 
-   public class TicTacToe {
-            public static void main(String[] args) {
-            TicTacToeGUI game = new TicTacToeGUI();
-            game.startGame();
-            }
-            }
+         public class TicTacToe {
+         public static void main(String[] args) {
+         TicTacToeGUI game = new TicTacToeGUI();
+         game.startGame();
+         }
+         }
+   
 5. Memasukkan code di bawah ini kedalam file TicTacToeGUI.java.
 
             import java.awt.*;
