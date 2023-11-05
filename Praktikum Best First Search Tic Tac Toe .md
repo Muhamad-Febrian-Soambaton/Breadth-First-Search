@@ -139,3 +139,4 @@ Muhamad Febrian Soambaton 5311421050
 7. Hasil dan penjelasan code.
 
 ## Hasil
+![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/a52b0539-d78b-49e7-868b-c82c47b78f8d)
