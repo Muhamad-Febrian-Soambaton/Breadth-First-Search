@@ -166,26 +166,132 @@ Penjelasan Code
 Import Libraries:
 Kode pertama mengimpor beberapa pustaka yang diperlukan, seperti tkinter untuk antarmuka grafis, messagebox untuk menampilkan pesan, dan PriorityQueue untuk menerapkan algoritma Minimax.
 
+         import tkinter as tk
+         from tkinter import messagebox
+         from queue import PriorityQueue
+
+
 Fungsi check_win(player):
 Fungsi ini memeriksa apakah pemain (X atau O) telah memenangkan permainan. Ini memeriksa baris, kolom, dan diagonal untuk mencari pemenang.
+
+         # Function to check for a win
+         def check_win(player):
+             for i in range(3):
+                 if board[i][0] == board[i][1] == board[i][2] == player:  # Check rows
+                     return True
+                 if board[0][i] == board[1][i] == board[2][i] == player:  # Check columns
+                     return True
+             if board[0][0] == board[1][1] == board[2][2] == player:  # Check diagonals
+                 return True
+             if board[0][2] == board[1][1] == board[2][0] == player:  # Check diagonals
+                 return True
+             return False
 
 Fungsi is_draw():
 Fungsi ini memeriksa apakah permainan berakhir dengan hasil seri (draw).
 
+         # Function to check for a draw
+         def is_draw():
+             return all(board[i][j] != " " for i in range(3) for j in range(3))
+
+
 Fungsi evaluate_board():
 Fungsi ini mengevaluasi kondisi papan permainan saat ini. Mengembalikan -1 jika pemain X menang, 1 jika pemain O menang, dan 0 jika belum ada yang menang.
+
+         # Function to evaluate the board state
+         def evaluate_board():
+             if check_win("X"):
+                 return -1
+             elif check_win("O"):
+                 return 1
+             else:
+                 return 0
 
 Fungsi minimax(board, depth, maximizing_player):
 Ini adalah implementasi algoritma Minimax dengan pemangkasan alpha-beta. Ini digunakan oleh bot untuk memilih gerakan terbaik berdasarkan papan permainan saat ini dan kedalaman pencarian tertentu.
 
+         def minimax(board, depth, maximizing_player):
+             if depth == 0 or check_win("X") or check_win("O") or is_draw():
+                 return evaluate_board()
+         
+             if maximizing_player:
+                 max_eval = -float("inf")
+                 for i in range(3):
+                     for j in range(3):
+                         if board[i][j] == " ":
+                             board[i][j] = "O"
+                             eval = minimax(board, depth - 1, False)
+                             board[i][j] = " "
+                             max_eval = max(max_eval, eval)
+                 return max_eval
+             else:
+                 min_eval = float("inf")
+                 for i in range(3):
+                     for j in range(3):
+                         if board[i][j] == " ":
+                             board[i][j] = "X"
+                             eval = minimax(board, depth - 1, True)
+                             board[i][j] = " "
+                             min_eval = min(min_eval, eval)
+                 return min_eval
+
 Fungsi bfs_bot():
 Ini adalah bot yang menggunakan algoritma Best-First Search untuk memilih gerakan terbaik. Bot mencoba semua gerakan yang mungkin dan memilih yang memiliki skor tertinggi berdasarkan algoritma Minimax.
+
+         # Best-First Search bot
+         def bfs_bot():
+             best_score = -float("inf")
+             best_move = None
+             for i in range(3):
+                 for j in range(3):
+                     if board[i][j] == " ":
+                         board[i][j] = "O"
+                         move_score = minimax(board, 2, False)  # Depth limited for faster response
+                         board[i][j] = " "
+                         if move_score > best_score:
+                             best_score = move_score
+                             best_move = (i, j)
+             return best_move
 
 Fungsi on_click(row, col):
 Ini adalah fungsi yang dipanggil saat pemain mengklik kotak di papan permainan. Ini menentukan gerakan pemain, memeriksa apakah pemain menang atau hasil seri, dan membiarkan bot membuat gerakan.
 
+         # Function to handle player's move
+         def on_click(row, col):
+             if board[row][col] == " ":
+                 board[row][col] = "X"
+                 buttons[row][col].config(text="X")
+                 if check_win("X"):
+                     messagebox.showinfo("Tic Tac Toe", "Player X wins!")
+                     reset_game()
+                 elif is_draw():
+                     messagebox.showinfo("Tic Tac Toe", "It's a draw!")
+                     reset_game()
+                 else:
+                     bot_move = bfs_bot()
+                     if bot_move:
+                         row, col = bot_move
+                         board[row][col] = "O"
+                         buttons[row][col].config(text="O")
+                         if check_win("O"):
+                             messagebox.showinfo("Tic Tac Toe", "Player O wins!")
+                             reset_game()
+                         elif is_draw():
+                             messagebox.showinfo("Tic Tac Toe", "It's a draw!")
+                             reset_game()
+
+
 Fungsi reset_game():
 Fungsi ini mengatur ulang permainan, mengosongkan papan permainan, dan mengembalikan tombol ke keadaan awal.
+
+         # Function to reset the game
+         def reset_game():
+             global board
+             board = [[" " for _ in range(3)] for _ in range(3)]
+             for i in range(3):
+                 for j in range(3):
+                     buttons[i][j].config(text=" ", state=tk.NORMAL)
+
 
 Pembuatan GUI:
 Kode ini membuat antarmuka grafis untuk permainan Tic Tac Toe menggunakan tkinter. Kode Ini menampilkan papan permainan dengan tombol-tombol yang dapat diklik.
