@@ -4,8 +4,10 @@ Muhamad Febrian Soambaton 5311421050
 ## Method
 1. Membuka Visual Studio Code.
 2. Membuat file gui dan file utama seperti gambar dibawah.
+
    ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/d97e88f9-af84-4f38-9a22-e0905c374f23)
-3. Memasukkan code di bawah kedalam file TicTacToe.java.
+   
+4. Memasukkan code di bawah kedalam file TicTacToe.java.
 
          public class TicTacToe {
          public static void main(String[] args) {
