@@ -13,9 +13,10 @@ Muhamad Febrian Soambaton 5311421050
             }
             }
 4. Memasukkan code di bawah ini kedalam file TicTacToeGUI.java.
-               import java.awt.*;
-               import java.awt.event.*;
-               import javax.swing.*;
+
+            import java.awt.*;
+            import java.awt.event.*;
+            import javax.swing.*;
       
        public class TicTacToeGUI {
        private JFrame frame;
