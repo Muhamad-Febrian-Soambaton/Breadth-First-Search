@@ -140,6 +140,9 @@ Muhamad Febrian Soambaton 5311421050
 
 ## Hasil
 ![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/a52b0539-d78b-49e7-868b-c82c47b78f8d)
+
+![image](https://github.com/Muhamad-Febrian-Soambaton/Search-Algorithm/assets/148663785/808dda20-20cd-408e-a16a-bdfc46f9814c)
+
 Dari hasil yang diberikan code dapat berjalan sesuai yang diinginkan dan bot dapat bermain bersama manusia dengan menggunakan algoritma Best First Search.
 
 ## Penjelasan Code
